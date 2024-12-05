@@ -88,10 +88,13 @@
     "target_id" : "0000002",
     "message" : "hello"
 }
+----
 *** Client에서 서버에 전송
 *** target_id - 메시지 전달 대상 client id(최종 수신자)
 ** 전달
 +
+[source,json]
+----
 {
     "id" : 2,
     "type" : "message",
