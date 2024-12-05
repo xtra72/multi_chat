@@ -51,26 +51,29 @@
 
 ** 요청
 +
-[source,json]
+[source,text]
 ----
-{ "id" : 1, "type" : "connect", "client_id" : "0000001"}
+> # 1 connect 00000001
+>
 ----
 **** id - 메시지 id로 메시지 전송시마다 증가
 **** type -  메시지 종류
 ** 응답 - 접속 허용
 +
-[source,json]
+[source,text]
 ----
-{ "id" : 1, "type" : "connect", "response" : "ok", "client_id" : "0000001"}
+< @ 1 connect ok 00000001
+<
 ----
 **** id - 요청에 대한 응답인 경우, 동일한 id사용
 **** type -  메시지 종류
 **** response - 성공 응답
 ** 응답 -접속 차단
 +
-[source,json]
+[source,text]
 ----
-{ "id" : 1, "type" : "connect", "response" : "deny", "client_id" : "0000001"}
+< @ 1 connect deny 00000001
+<
 ----
 **** id - 요청에 대한 응답인 경우, 동일한 id사용
 **** type -  메시지 종류
@@ -80,27 +83,21 @@
 
 ** 전송 요청
 +
-[source,json]
+[source,text]
 ----
-{
-    "id" : 2,
-    "type" : "message",
-    "target_id" : "0000002",
-    "message" : "hello"
-}
+> # 2 message 00000002
+> hello!
+>
 ----
 *** Client에서 서버에 전송
 *** target_id - 메시지 전달 대상 client id(최종 수신자)
 ** 전달
 +
-[source,json]
+[source,text]
 ----
-{
-    "id" : 2,
-    "type" : "message",
-    "client_id" : "0000001",
-    "message" : "hello"
-}
+> @ 2 message 00000001
+> hello!
+>
 ----
 *** Server에서 대상 client로 전송
 *** client_id - 메시지를 생성해서 보낸  client의 id(최초 발신자)
@@ -111,26 +108,18 @@
 
 ** 요청
 +
-[source,json]
+[source,text]
 ----
-{
-    "id" : 3,
-    "type" : "client_list"
-}
+> # 3 client_list
 ----
 ** 응답
 +
-[source,json]
+[source,text]
 ----
-{
-    "id" : 3,
-    "cmd" : "client_list",
-    "client_id" : [
-        "1234567",
-        "0000001",
-        "0102030"
-    ]
-}
+< @ 3 client_list
+< 00000001
+< 00000002
+<
 ----
 
 === 설정 정보
