@@ -102,6 +102,27 @@
 *** Server에서 대상 client로 전송
 *** client_id - 메시지를 생성해서 보낸  client의 id(최초 발신자)
 
+
+** 단체 전송 요청
++
+[source,text]
+----
+> # 2 message
+> hello!
+>
+----
+*** Client에서 서버에 전송
+** 전달
++
+[source,text]
+----
+< @ 2 message 00000001
+< hello!
+<
+----
+*** Server에서 모든 client로 전송
+*** client_id - 메시지를 생성해서 보낸  client의 id(최초 발신자)
+
 **접속자 명단 확인**
 
 ** 서버에 접속자 명단을 요청할 수 있다.
