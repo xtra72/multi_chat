@@ -95,9 +95,9 @@
 +
 [source,text]
 ----
-> @ 2 message 00000001
-> hello!
->
+< @ 2 message 00000001
+< hello!
+<
 ----
 *** Server에서 대상 client로 전송
 *** client_id - 메시지를 생성해서 보낸  client의 id(최초 발신자)
