@@ -1,10 +1,10 @@
-== Quiz-13. Client에서 보내온 메시지를 접속한 모든 client 또는 특정 client에 전송할 수 있도록 multi-chatting client/server를 만들어 보자.
+= Quiz-13. Client에서 보내온 메시지를 접속한 모든 client 또는 특정 client에 전송할 수 있도록 multi-chatting client/server를 만들어 보자.
 
 {empty} +
 
-=== 요구 사항
+== 요구 사항
 
-==== Server
+=== Server
 
 * 기본 기능
 ** 다중 접속 지원
@@ -34,7 +34,7 @@
 * Logging
 ** log4j, slf4j, logback등의 logging module을 이용해 trace를 위한 동작 정보를 파일에 남김
 
-==== Client
+=== Client
 
 * 기본 기능
 ** 서버 접속
@@ -43,7 +43,7 @@
 ** 서버 접속 후 id 전송
 *** Client마다 고유 id 부여
 
-==== Message 형식
+=== Message 형식
 
 * JSON format 적용
 
@@ -130,7 +130,7 @@
 }
 ----
 
-==== 설정 정보
+=== 설정 정보
 
 ** Client ID
 ** Server IP/Port
